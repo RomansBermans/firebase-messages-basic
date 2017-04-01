@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Install [Node.js](https://nodejs.org/en/download/) and run `npm install npm@latest -g`
+1. Install [Node.js](https://nodejs.org/en/download/)
 2. Create a project on [Firebase](https://console.firebase.google.com/)
 3. Note down the Project ID
 4. Replace the project id in the `.firebaserc` with your Project ID
