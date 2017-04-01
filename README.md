@@ -3,11 +3,10 @@
 ## Setup
 
 1. Install [Node.js](https://nodejs.org/en/download/)
-2. Create a project on [Firebase](https://console.firebase.google.com/)
-3. Note down the Project ID
-4. Replace the project id in the `.firebaserc` with your Project ID
-5. Click **Add Firebase to your web app** and copy your Initialization Code
-6. Replace the initialization code in the `app/app.js` with your Initialization Code
+2. Create a project on [Firebase](https://console.firebase.google.com/) and note down the Project ID
+3. Replace the project id in the `.firebaserc` with your Project ID
+4. Click **Add Firebase to your web app** and copy your Initialization Code
+5. Replace the initialization code in the `app/app.js` with your Initialization Code
 
 ## Install
 ```
