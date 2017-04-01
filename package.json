@@ -1,0 +1,16 @@
+{
+  "name": "firebase-messages",
+  "version": "0.0.0-alpha.0",
+  "scripts": {
+    "postinstall": "cd app && npm install && cd .. && cd functions && npm install",
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "firebase-bolt": "^0.8.2",
+    "firebase-tools": "^3.5.0"
+  },
+  "homepage": "https://github.com/RomansBermans/firebase-messages",
+  "author": "Romans Bermans <romans.bermans@gmail.com>",
+  "license": "ISC"
+}

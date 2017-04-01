@@ -1,0 +1,41 @@
+
+
+/* ********* DEFINE TYPES ********* */
+
+
+type Created extends Number {
+  validate() { prior(this) == null ? this == now : this == prior(this) }
+}
+
+type Modified extends Number {
+  validate() { this == now }
+}
+
+type Text extends String {
+  validate() { this.length > 0 }
+}
+
+
+/* ********* DEFINE MODELS ********* */
+
+
+type Message {
+  created: Created,
+  modified: Modified | Null,
+  text: Text,
+}
+
+
+/* ********* DEFINE PATHS ********* */
+
+
+path /messages {
+  read() { true }
+
+  path /{message} is Message {
+    create() { true }
+    update() { true }
+    delete() { false }
+  }
+}
+
