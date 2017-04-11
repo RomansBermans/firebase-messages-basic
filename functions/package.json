@@ -2,8 +2,8 @@
   "name": "firebase-messages-functions",
   "version": "0.0.0-alpha.0",
   "dependencies": {
-    "firebase": "^3.7.4",
-    "firebase-admin": "^4.1.4",
+    "firebase": "^3.7.5",
+    "firebase-admin": "^4.2.0",
     "firebase-functions": "^0.5.3"
   }
 }

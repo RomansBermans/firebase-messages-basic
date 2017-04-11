@@ -8,6 +8,7 @@ const config = {
   apiKey: 'AIzaSyBbtZEaaqqhvp5r7eYbxaEigCT1CInXedM',
   authDomain: 'prototype-f8013.firebaseapp.com',
   databaseURL: 'https://prototype-f8013.firebaseio.com',
+  projectId: 'prototype-f8013',
   storageBucket: 'prototype-f8013.appspot.com',
   messagingSenderId: '1077602867778',
 };
