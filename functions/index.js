@@ -14,7 +14,7 @@ module.exports = {
   }),
 
   emojify: functions.database.ref('/messages/{message}/text').onWrite(event => {
-    if (event.data.previous.val() || !event.data.val()) {
+    if (event.data.previous.exists() || !event.data.exists()) {
       return;
     }
 
