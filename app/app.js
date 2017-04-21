@@ -16,6 +16,9 @@ const config = {
 firebase.initializeApp(config);
 
 
+const timestamp = firebase.database.ServerValue.TIMESTAMP;
+
+
 /* ********* CONFIGURE VUE ********* */
 
 
@@ -82,7 +85,6 @@ const Messages = {
 
   template: `
     <section>
-
       <md-list v-if="messages.length">
         <md-list-item v-for="message in messages" :key="message['.key']">
           <div class="md-list-text-container">
@@ -91,14 +93,14 @@ const Messages = {
           </div>
         </md-list-item>
       </md-list>
-
       <footer>
         <md-whiteframe md-elevation="4">
-          <input v-model="text" type="text" placeholder="Type a message..." @keyup.enter="add"/>
-          <a @click="add">⬆️</a>
+          <input ref="text" v-model="text" type="text" placeholder="send a message..." @keyup.enter="send"/>
+          <md-button @click.native="send" class="md-icon-button">
+            <md-icon>arrow_upward</md-icon>
+          </md-button>
         </md-whiteframe>
       </footer>
-
     </section>
   `,
 
@@ -113,13 +115,17 @@ const Messages = {
   },
 
   methods: {
-    add() {
-      const created = firebase.database.ServerValue.TIMESTAMP;
+    send() {
+      if (!this.text) {
+        return;
+      }
+
+      this.$refs.text.focus();
+
       const text = this.text;
-
-      this.$firebaseRefs.messages.push({ created, text });
-
       this.text = '';
+
+      this.$firebaseRefs.messages.push({ created: timestamp, text });
     },
   },
 };

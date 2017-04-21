@@ -58,6 +58,9 @@
         <messages class="messages"></messages>
       </main>
 
+      <transition name="fade">
+        <div v-show="!ready" class="splash-screen"></div>
+      </transition>
     </div>
 
     <script src="node_modules/vue/dist/vue.min.js"></script>
