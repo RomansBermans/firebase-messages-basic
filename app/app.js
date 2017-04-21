@@ -85,14 +85,16 @@ const Messages = {
 
   template: `
     <section>
-      <md-list v-if="messages.length">
-        <md-list-item v-for="message in messages" :key="message['.key']">
-          <div class="md-list-text-container">
-            <span>{{ message.text }}</span>
-            <span>{{ message.created | ago }}</span>
-          </div>
-        </md-list-item>
-      </md-list>
+      <div class="scroll">
+        <md-list v-if="messages.length">
+          <md-list-item v-for="message in messages" :key="message['.key']">
+            <div class="md-list-text-container">
+              <span>{{ message.text }}</span>
+              <span>{{ message.created | ago }}</span>
+            </div>
+          </md-list-item>
+        </md-list>
+      </div>
       <footer>
         <md-whiteframe md-elevation="4">
           <input ref="text" v-model="text" type="text" placeholder="send a message..." @keyup.enter="send"/>
