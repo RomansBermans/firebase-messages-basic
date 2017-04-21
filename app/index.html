@@ -49,13 +49,16 @@
       <header>
         <md-whiteframe md-elevation="4">
           <md-toolbar>
-            <h2 class="md-title">Messages</h2>
+            <h2 class="md-title" style="flex:1">Messages</h2>
+            <md-button @click.native="$refs.messages.remove()" class="md-icon-button">
+              <md-icon>remove</md-icon>
+            </md-button>
           </md-toolbar>
         </md-whiteframe>
       </header>
 
       <main>
-        <messages class="messages"></messages>
+        <messages ref="messages" class="messages"></messages>
       </main>
 
       <transition name="fade">

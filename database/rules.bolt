@@ -32,11 +32,11 @@ type Message {
 
 path /messages {
   read() { true }
+  delete() { true }
 
   path /{message} is Message {
     create() { true }
     update() { true }
-    delete() { false }
   }
 }
 

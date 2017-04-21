@@ -39,7 +39,7 @@ Vue.material.registerTheme(themes);
 
 
 Vue.filter('ago', v => {
-  let ago = (Date.now() - v) / 1000;
+  let ago = Math.max(0, (Date.now() - v) / 1000);
 
   if (ago >= 86400) {
     ago = `${Math.round(ago / 86400)}d ago`;
@@ -127,6 +127,9 @@ const Messages = {
 
       this.$firebaseRefs.messages.push({ created: timestamp, text });
     },
+    remove() {
+      this.$firebaseRefs.messages.remove();
+    },
   },
 };
 
@@ -136,6 +139,14 @@ const Messages = {
 
 const vm = new Vue({
   el: '#app',
+
+  data: {
+    ready: false,
+  },
+
+  mounted() {
+    this.ready = true;
+  },
 
   components: {
     Messages,
