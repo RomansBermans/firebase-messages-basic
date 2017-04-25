@@ -29,6 +29,10 @@ module.exports = {
     text = text.replace(/8\)/gi, '😎');
     text = text.replace(/:\)|:D/gi, '😁');
 
+    if (text === event.data.val()) {
+      return;
+    }
+
     return event.data.ref.parent.update({ modified: timestamp, text });
   }),
 };
