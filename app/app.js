@@ -124,7 +124,7 @@ const Messages = {
 
       this.$refs.text.focus();
 
-      const text = this.text;
+      const { text } = this;
       this.text = '';
 
       this.$firebaseRefs.messages.push({ created: timestamp, text });
