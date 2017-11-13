@@ -8,7 +8,9 @@
     "pretest": "eslint --ext .js .",
     "test": ":",
 
-    "deploy": "firebase deploy"
+    "deploy:app": "firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "npm run deploy:app && npm run deploy:functions"
   },
   "devDependencies": {
     "eslint": "^4.11.0",

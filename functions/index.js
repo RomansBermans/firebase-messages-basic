@@ -15,10 +15,6 @@ const timestamp = Firebase.database.ServerValue.TIMESTAMP;
 
 
 module.exports = {
-  emoji: Functions.https.onRequest((req, res) =>
-    res.send(['😀', '😇', '😍', '😤', '😳', '😵'][Math.floor(Math.random() * 6)]),
-  ),
-
   emojify: Functions.database.ref('/messages/{message}/text').onCreate(event => {
     let text = event.data.val();
 
@@ -26,6 +22,7 @@ module.exports = {
     text = text.replace(/:\)|:D/gi, '😁');
     text = text.replace(/:\(/gi, '🙁');
     text = text.replace(/<3/gi, '❤️');
+    text = text.replace(/\*/gi, ['😀', '😇', '😍', '😤', '😳', '😵'][Math.floor(Math.random() * 6)]);
 
     return event.data.ref.parent.update({ modified: timestamp, text });
   }),
