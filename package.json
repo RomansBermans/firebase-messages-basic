@@ -2,18 +2,20 @@
   "name": "firebase-messages",
   "version": "0.0.0-alpha.0",
   "scripts": {
-    "postinstall": "cd app && npm install && cd .. && cd functions && npm install",
+    "postinstall": "npm install --prefix app && npm install --prefix functions",
     "start": "firebase serve",
-    "pretest": "eslint --ignore-path .gitignore . ",
+
+    "pretest": "eslint --ext .js .",
     "test": ":",
+
     "deploy": "firebase deploy"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
+    "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "firebase-bolt": "^0.8.2",
-    "firebase-tools": "^3.14.0"
+    "firebase-tools": "^3.15.0"
   },
   "repository": {
     "type": "git",

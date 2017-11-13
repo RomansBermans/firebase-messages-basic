@@ -1,37 +1,31 @@
-/* eslint-disable consistent-return */
+/* */
 
 
-/* ********* CONFIGURE FUNCTIONS ********* */
+const Firebase = require('firebase-admin');
+const Functions = require('firebase-functions');
 
 
-const firebase = require('firebase');
-const functions = require('firebase-functions');
+/* ********* INIT ********* */
 
 
-const timestamp = firebase.database.ServerValue.TIMESTAMP;
+const timestamp = Firebase.database.ServerValue.TIMESTAMP;
 
 
-/* ********* DEFINE FUNCTIONS ********* */
+/* ********* FUNCTIONS ********* */
 
 
 module.exports = {
-  emoji: functions.https.onRequest((req, res) => {
-    res.send(['😀', '😇', '😍', '😤', '😳', '😵'][Math.floor(Math.random() * 6)]);
-  }),
+  emoji: Functions.https.onRequest((req, res) =>
+    res.send(['😀', '😇', '😍', '😤', '😳', '😵'][Math.floor(Math.random() * 6)]),
+  ),
 
-  emojify: functions.database.ref('/messages/{message}/text').onWrite(event => {
-    if (event.data.previous.exists() || !event.data.exists()) {
-      return;
-    }
-
+  emojify: Functions.database.ref('/messages/{message}/text').onCreate(event => {
     let text = event.data.val();
 
     text = text.replace(/8\)/gi, '😎');
     text = text.replace(/:\)|:D/gi, '😁');
-
-    if (text === event.data.val()) {
-      return;
-    }
+    text = text.replace(/:\(/gi, '🙁');
+    text = text.replace(/<3/gi, '❤️');
 
     return event.data.ref.parent.update({ modified: timestamp, text });
   }),

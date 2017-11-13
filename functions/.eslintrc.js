@@ -1,12 +1,9 @@
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    node: true,
-  },
   extends: 'airbnb-base',
   rules: {
     'arrow-parens': ['error', 'as-needed'],
+    'function-paren-newline': 'off',
     'max-len': [ 'error', 240 ],
   }
 }
