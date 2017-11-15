@@ -3,13 +3,18 @@
   "version": "0.0.0-alpha.0",
   "scripts": {
     "postinstall": "npm install --prefix app && npm install --prefix functions",
+
+
     "start": "firebase serve",
+
 
     "pretest": "eslint --ext .js .",
     "test": ":",
 
+
     "deploy:app": "firebase deploy --only hosting",
     "deploy:functions": "firebase deploy --only functions",
+
     "deploy": "npm run deploy:app && npm run deploy:functions"
   },
   "devDependencies": {

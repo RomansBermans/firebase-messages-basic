@@ -1,4 +1,4 @@
-/* eslint-disable no-undef, no-unused-vars, no-unused-expressions */
+/* eslint-disable no-undef */
 
 
 /* ********* CONFIGURE FIREBASE ********* */
@@ -14,7 +14,6 @@ const config = {
 };
 
 firebase.initializeApp(config);
-
 
 const timestamp = firebase.database.ServerValue.TIMESTAMP;
 
@@ -139,6 +138,7 @@ const Messages = {
 /* ********* INITIALIZE VUE ********* */
 
 
+// eslint-disable-next-line no-unused-vars
 const vm = new Vue({
   el: '#app',
 
