@@ -1,5 +1,7 @@
 # firebase-messages
 
+A very basic Firebase messaging application.
+
 ## Setup
 1. Install [Node.js](https://nodejs.org/en/download/)
 2. Create a project on [Firebase](https://console.firebase.google.com/) and note down the Project ID
