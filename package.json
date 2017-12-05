@@ -1,5 +1,5 @@
 {
-  "name": "firebase-messages",
+  "name": "firebase-messages-basic",
   "version": "0.0.0-alpha.0",
   "scripts": {
     "postinstall": "npm install --prefix app && npm install --prefix functions",
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RomansBermans/firebase-messages.git"
+    "url": "https://github.com/RomansBermans/firebase-messages-basic.git"
   },
   "bugs": {
-    "url": "https://github.com/RomansBermans/firebase-messages/issues"
+    "url": "https://github.com/RomansBermans/firebase-messages-basic/issues"
   },
-  "homepage": "https://github.com/RomansBermans/firebase-messages",
+  "homepage": "https://github.com/RomansBermans/firebase-messages-basic",
   "author": "Romans Bermans <romans.bermans@gmail.com>",
   "license": "ISC"
 }

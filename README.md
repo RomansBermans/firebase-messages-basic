@@ -1,4 +1,4 @@
-# firebase-messages
+# firebase-messages-basic
 
 A very basic Firebase messaging application.
 

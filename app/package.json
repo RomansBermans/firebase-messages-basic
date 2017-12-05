@@ -1,5 +1,5 @@
 {
-  "name": "firebase-messages-app",
+  "name": "firebase-messages-basic-app",
   "version": "0.0.0-alpha.0",
   "dependencies": {
     "firebase": "^4.6.2",

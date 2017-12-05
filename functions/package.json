@@ -1,5 +1,5 @@
 {
-  "name": "firebase-messages-functions",
+  "name": "firebase-messages-basic-functions",
   "version": "0.0.0-alpha.0",
   "dependencies": {
     "firebase-admin": "^5.5.0",
