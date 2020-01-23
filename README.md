@@ -25,9 +25,6 @@ npm start
 npm run deploy
 ```
 
-## Demo
-https://prototype-f8013.firebaseapp.com/
-
 ## Learn More
 
 [Firebase Bolt](https://github.com/firebase/bolt)
